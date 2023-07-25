@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CMS", "CMS\CMS.vcproj", "{42030EBB-1162-467D-BB26-BBE995FB04D6}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CMS-Install", "CMS-Install\CMS-Install.vdproj", "{829E58C7-3ACA-4D76-BFBB-8F1DA6747E4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42030EBB-1162-467D-BB26-BBE995FB04D6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{42030EBB-1162-467D-BB26-BBE995FB04D6}.Debug|Win32.Build.0 = Debug|Win32
+		{42030EBB-1162-467D-BB26-BBE995FB04D6}.Release|Win32.ActiveCfg = Release|Win32
+		{42030EBB-1162-467D-BB26-BBE995FB04D6}.Release|Win32.Build.0 = Release|Win32
+		{829E58C7-3ACA-4D76-BFBB-8F1DA6747E4D}.Debug|Win32.ActiveCfg = Debug
+		{829E58C7-3ACA-4D76-BFBB-8F1DA6747E4D}.Release|Win32.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

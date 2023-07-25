@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns="http://axis.service.securityrail.jdgm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://axis.service.securityrail.jdgm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>StubWebService</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://axis.service.securityrail.jdgm.com">
+      <xs:element name="execDDL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sqls" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="execDDLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="execDML">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sqls" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="execDMLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="query">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sqls" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="queryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sayHello">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sayHelloResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="queryRequest">
+    <wsdl:part name="parameters" element="ns:query" />
+  </wsdl:message>
+  <wsdl:message name="queryResponse">
+    <wsdl:part name="parameters" element="ns:queryResponse" />
+  </wsdl:message>
+  <wsdl:message name="sayHelloRequest">
+    <wsdl:part name="parameters" element="ns:sayHello" />
+  </wsdl:message>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part name="parameters" element="ns:sayHelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="execDDLRequest">
+    <wsdl:part name="parameters" element="ns:execDDL" />
+  </wsdl:message>
+  <wsdl:message name="execDDLResponse">
+    <wsdl:part name="parameters" element="ns:execDDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="execDMLRequest">
+    <wsdl:part name="parameters" element="ns:execDML" />
+  </wsdl:message>
+  <wsdl:message name="execDMLResponse">
+    <wsdl:part name="parameters" element="ns:execDMLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StubWebServicePortType">
+    <wsdl:operation name="query">
+      <wsdl:input wsaw:Action="urn:query" message="ns:queryRequest" />
+      <wsdl:output wsaw:Action="urn:queryResponse" message="ns:queryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sayHello">
+      <wsdl:input wsaw:Action="urn:sayHello" message="ns:sayHelloRequest" />
+      <wsdl:output wsaw:Action="urn:sayHelloResponse" message="ns:sayHelloResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="execDDL">
+      <wsdl:input wsaw:Action="urn:execDDL" message="ns:execDDLRequest" />
+      <wsdl:output wsaw:Action="urn:execDDLResponse" message="ns:execDDLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="execDML">
+      <wsdl:input wsaw:Action="urn:execDML" message="ns:execDMLRequest" />
+      <wsdl:output wsaw:Action="urn:execDMLResponse" message="ns:execDMLResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StubWebServiceSoap11Binding" type="ns:StubWebServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="query">
+      <soap:operation soapAction="urn:query" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="urn:sayHello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execDML">
+      <soap:operation soapAction="urn:execDML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execDDL">
+      <soap:operation soapAction="urn:execDDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StubWebServiceSoap12Binding" type="ns:StubWebServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="query">
+      <soap12:operation soapAction="urn:query" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHello">
+      <soap12:operation soapAction="urn:sayHello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execDML">
+      <soap12:operation soapAction="urn:execDML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execDDL">
+      <soap12:operation soapAction="urn:execDDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StubWebServiceHttpBinding" type="ns:StubWebServicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="query">
+      <http:operation location="StubWebService/query" />
+      <wsdl:input>
+        <mime:content part="query" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="query" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHello">
+      <http:operation location="StubWebService/sayHello" />
+      <wsdl:input>
+        <mime:content part="sayHello" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="sayHello" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execDML">
+      <http:operation location="StubWebService/execDML" />
+      <wsdl:input>
+        <mime:content part="execDML" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="execDML" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="execDDL">
+      <http:operation location="StubWebService/execDDL" />
+      <wsdl:input>
+        <mime:content part="execDDL" type="text/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="execDDL" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StubWebService">
+    <wsdl:port name="StubWebServiceHttpSoap11Endpoint" binding="ns:StubWebServiceSoap11Binding">
+      <soap:address location="http://192.168.0.34:8080/gmsastub/services/StubWebService.StubWebServiceHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="StubWebServiceHttpSoap12Endpoint" binding="ns:StubWebServiceSoap12Binding">
+      <soap12:address location="http://192.168.0.34:8080/gmsastub/services/StubWebService.StubWebServiceHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="StubWebServiceHttpEndpoint" binding="ns:StubWebServiceHttpBinding">
+      <http:address location="http://192.168.0.34:8080/gmsastub/services/StubWebService.StubWebServiceHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
